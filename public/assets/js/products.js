@@ -16,20 +16,30 @@ function getProducts() {
               orderAmount = orderAmount + `<option> ${i + 1} </option>`;
             }
             return `<div class="col mb-5"> 
-                <div class="card shadow h-100"> <img class="card-img-top embed-responsive-item" src="${product.image}" alt="..." /> 
+                <div class="card shadow h-100"> <img class="card-img-top embed-responsive-item" src="${
+                  product.image
+                }" alt="..."/> 
                     <div class="card-body p-2">
                         <div class="text-center fw-light"> 
-                            <h5 class="product-name text-wrap fw-normal">${product.name}</h5 > 
-                            Rs. ${product.mrpAmount}
+                            <h5 class="product-name text-wrap fw-normal">${
+                              product.name
+                            }</h5 > 
+                            <i class="fa fa-inr"></i> ${product.mrpAmount.toLocaleString(
+                              "en-IN"
+                            )}
                         </div>
                     </div> 
                 <div class="card-footer justify m-auto bg-transparent text-center border-top-0">
                 <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <button class="btn btn-dark mx-1 add-to-cart" id="${product.productId}" type="button">Add to Cart</button>
+                    <button class="btn btn-dark mx-1 add-to-cart" id="${
+                      product.productId
+                    }" type="button">Add to Cart</button>
                 </div>
                 <div class="form-group mx-1">
-                    <select class="form-control" id="select-product-${product.productId}">
+                    <select class="form-control" id="select-product-${
+                      product.productId
+                    }">
                     ${orderAmount}
                     </select>
                 </div>
