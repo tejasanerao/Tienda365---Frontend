@@ -39,31 +39,21 @@ function getProducts() {
         </div>`;
           })
           .join("");
-        // console.log(products);
         productDiv.insertAdjacentHTML("afterbegin", products);
 
         document.querySelectorAll(".add-to-cart").forEach((i) =>
           i.addEventListener("click", () => {
-            // console.log(i.id);
             var select = document.getElementById(`select-product-${i.id}`);
             var value = select.options[select.selectedIndex].value;
-            // en
             addItemToCart(i.id, value);
-            // console.log("clicked");
           })
         );
-        // console.log(addToCartButtons);
-        // addToCartButtons.forEach((element) => {});
       });
     }
   });
 }
 
 function addItemToCart(productId, count) {
-  //   console.log(typeof parseInt(productId));
-  //   console.log(typeof count);
-  //   console.log("In AddItem Function");
-
   var authToken = localStorage.getItem("authToken");
   fetch("https://localhost:5001/api/cart", {
     method: "POST",

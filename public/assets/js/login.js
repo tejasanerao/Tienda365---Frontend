@@ -24,11 +24,6 @@ function login() {
       });
     } else {
       res.json().then((data) => {
-        // var authToken = data.data.error;
-        // console.log(authToken);
-        // localStorage.setItem("authToken", authToken);
-        // window.location = "index.html";
-        console.log(data.message[0]);
         document.getElementById("error-text").classList.add("error-text-show");
         document
           .getElementById("error-text")
